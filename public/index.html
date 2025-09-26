@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Secure Password Studio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="background-gradient"></div>
+    <main class="app-shell">
+      <header class="app-header">
+        <h1>Secure Password Studio</h1>
+        <p>
+          Craft ultra-secure passwords tailored to your needs. Choose the perfect
+          length, character sets, and advanced options with real-time strength
+          insights.
+        </p>
+      </header>
+
+      <section class="generator-card">
+        <form id="password-form" class="controls">
+          <div class="control-group">
+            <label for="length">Length</label>
+            <div class="range-control">
+              <input
+                type="range"
+                id="length"
+                name="length"
+                min="4"
+                max="128"
+                value="16"
+              />
+              <span id="length-value" aria-live="polite">16</span>
+            </div>
+          </div>
+
+          <div class="control-grid">
+            <label class="checkbox">
+              <input type="checkbox" id="lowercase" name="includeLowercase" checked />
+              <span>Lowercase (a-z)</span>
+            </label>
+            <label class="checkbox">
+              <input type="checkbox" id="uppercase" name="includeUppercase" checked />
+              <span>Uppercase (A-Z)</span>
+            </label>
+            <label class="checkbox">
+              <input type="checkbox" id="numbers" name="includeNumbers" checked />
+              <span>Numbers (0-9)</span>
+            </label>
+            <label class="checkbox">
+              <input type="checkbox" id="symbols" name="includeSymbols" checked />
+              <span>Symbols (!@#$)</span>
+            </label>
+            <label class="checkbox">
+              <input type="checkbox" id="excludeSimilar" name="excludeSimilar" />
+              <span>Avoid similar characters</span>
+            </label>
+          </div>
+
+          <div class="button-row">
+            <button type="submit" class="primary">Generate password</button>
+            <button type="button" id="copy" class="secondary" aria-live="polite">
+              Copy
+            </button>
+          </div>
+        </form>
+
+        <div class="output">
+          <div class="password-display" aria-live="polite">
+            <code id="password">Click generate to get started</code>
+          </div>
+          <div class="strength-meter">
+            <span id="strength-label">Strength: —</span>
+            <div class="meter-track">
+              <div id="meter-fill" class="meter-fill"></div>
+            </div>
+          </div>
+          <p class="helper-text" id="helper-text"></p>
+        </div>
+      </section>
+
+      <section class="tips">
+        <h2>Password hygiene tips</h2>
+        <ul>
+          <li>Use a unique password for every account.</li>
+          <li>Combine length with diverse characters for higher entropy.</li>
+          <li>Store generated passwords in a trusted password manager.</li>
+          <li>Enable multi-factor authentication whenever available.</li>
+        </ul>
+      </section>
+    </main>
+
+    <script src="app.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,17 @@
+{
+  "name": "secure-pasword",
+  "version": "1.0.0",
+  "description": "Modern web app for generating secure passwords with customizable options",
+  "main": "server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [
+    "password",
+    "generator",
+    "security"
+  ],
+  "author": "",
+  "license": "MIT"
+}
